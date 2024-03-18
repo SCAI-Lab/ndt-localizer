@@ -1,10 +1,10 @@
 <launch>
     
     <!--- Sim Time -->
-    <!-- <param name="/use_sim_time" default="false" /> -->
+    <param name="/use_sim_time" value="true" />
     <arg name="roll" default="0.0" />
     <arg name="pitch" default="0.0" />
-    <arg name="yaw" default="0.0" />
+    <arg name="yaw" default="-1.57" />
     <arg name="x" default="0.0" />
     <arg name="y" default="0.0" />
     <arg name="z" default="0.0" />
@@ -18,10 +18,10 @@
     <arg name="z" default="0.0" /> -->
 
     <!--- Run Rviz-->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ndt_localizer)/cfgs/rock-auto.rviz" />
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ndt_localizer)/cfgs/rock-auto.rviz" /> -->
 
     <!--- MapLoader -->    
-    <arg name="pcd_path"  default="$(find ndt_localizer)/map/kaist02.pcd"/>
+    <arg name="pcd_path"  default="$(find ndt_localizer)/map/map.pcd"/>
     <!-- <arg name="pcd_path"  default="/media/rdcas/dataset/map_result/kaist02.pcd"/> -->
     
     <arg name="map_topic" default="/points_map"/>
@@ -40,3 +40,4 @@
     </node>
 
 </launch>
+

@@ -60,7 +60,7 @@ If your Lidar data is sparse (like VLP-16), you need to config smaller `leaf_siz
 There are two static transform in this project: `base_link_to_localizer` and `world_to_map`，replace the `ouster` with your lidar frame id if you are using a different lidar:
 
 ```xml
-<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_localizer" args="0 0 0 0 0 0 base_link ouster"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_localizer" args="0 0 0 0 0 0 base_link livox"/>
 ```
 
 #### Config ndt localizer
