@@ -222,7 +222,9 @@ void NdtLocalizer::callback_pointcloud(
   }
 
   // publish tf(map frame to base frame)
-  publish_tf(map_frame_, base_frame_, result_pose_stamped_msg);
+  if (!skip_tf_pub) {
+    publish_tf(map_frame_, base_frame_, result_pose_stamped_msg);
+  }
 
   // publish aligned point cloud
   pcl::PointCloud<pcl::PointXYZ>::Ptr sensor_points_mapTF_ptr(new pcl::PointCloud<pcl::PointXYZ>);
@@ -289,6 +291,8 @@ void NdtLocalizer::init_params(){
 
   private_nh_.getParam(
     "converged_param_transform_probability", converged_param_transform_probability_);
+
+  private_nh_.getParam("skip_tf_pub", skip_tf_pub);
 }
 
 

@@ -70,6 +70,8 @@ private:
     std::thread diagnostic_thread_;
     std::map<std::string, std::string> key_value_stdmap_;
 
+    bool skip_tf_pub;
+
     // function
     void init_params();
     void timer_diagnostic();
