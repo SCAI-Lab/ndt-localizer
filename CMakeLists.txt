@@ -50,11 +50,11 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 include_directories(include ${catkin_INCLUDE_DIRS})
 SET(CMAKE_CXX_FLAGS "-O2 -g -Wall ${CMAKE_CXX_FLAGS}")
 
-add_executable(voxel_grid_filter nodes/points_downsampler.cpp)
+add_executable(voxel_grid_filter_one_more_time nodes/points_downsampler.cpp)
 
-add_dependencies(voxel_grid_filter ${catkin_EXPORTED_TARGETS})
+add_dependencies(voxel_grid_filter_one_more_time ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(voxel_grid_filter ${catkin_LIBRARIES})
+target_link_libraries(voxel_grid_filter_one_more_time ${catkin_LIBRARIES})
 
 add_executable(map_loader nodes/map_loader.cpp)
 target_link_libraries(map_loader ${catkin_LIBRARIES} ${PCL_LIBRARIES})

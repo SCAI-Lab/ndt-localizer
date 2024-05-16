@@ -1,6 +1,6 @@
 <launch>
   <arg name="sync" default="false" />
-  <arg name="node_name" default="voxel_grid_filter" />
+  <arg name="node_name" default="voxel_grid_filter_one_more_time" />
   <!-- <arg name="points_topic" default="/apollo/sensor/velodyne32/PointCloud2/fusion" /> -->
   <!-- <arg name="points_topic" default="/livox/points" /> -->
   <arg name="points_topic" default="/livox/points/camera_init" />

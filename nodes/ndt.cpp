@@ -266,7 +266,7 @@ void NdtLocalizer::callback_pointcloud(
 void NdtLocalizer::init_params(){
 
   private_nh_.getParam("base_frame", base_frame_);
-  ROS_INFO("base_frame_id: %s", base_frame_.c_str());
+  ROS_ERROR("base_frame_id: %s", base_frame_.c_str());
 
   double trans_epsilon = ndt_.getTransformationEpsilon();
   double step_size = ndt_.getStepSize();
@@ -318,7 +318,7 @@ bool NdtLocalizer::get_transform(
     *transform_stamped_ptr =
       tf2_buffer_.lookupTransform(target_frame, source_frame, time_stamp);
   } catch (tf2::TransformException & ex) {
-    ROS_WARN("%s", ex.what());
+    ROS_WARN(ex.what());
     ROS_ERROR("Please publish TF %s to %s", target_frame.c_str(), source_frame.c_str());
 
     transform_stamped_ptr->header.stamp = time_stamp;
@@ -358,7 +358,7 @@ bool NdtLocalizer::get_transform(
     *transform_stamped_ptr =
       tf2_buffer_.lookupTransform(target_frame, source_frame, ros::Time(0), ros::Duration(1.0));
   } catch (tf2::TransformException & ex) {
-    ROS_WARN("%s", ex.what());
+    ROS_WARN(ex.what());
     ROS_ERROR("Please publish TF %s to %s", target_frame.c_str(), source_frame.c_str());
 
     transform_stamped_ptr->header.stamp = ros::Time::now();

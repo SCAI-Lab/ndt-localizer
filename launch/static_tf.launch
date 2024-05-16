@@ -1,7 +1,7 @@
 <launch>
 
     <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="localizer_to_base_link" args="0 0 0 0 0 0 base_link livox"/> -->
-    <node pkg="tf2_ros" type="static_transform_publisher" name="livox_to_base_link" args="0 0 0 0 0 0 livox base_link"/>
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="localizer_to_base_link" args="0 0 0 0 0 0 base_link camera_init"/> -->
 
-    <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_map" args="0 0 0 0 0 0 map world" />
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_map" args="0 0 0 0 0 0 map world" /> -->
 </launch>
